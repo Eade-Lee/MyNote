@@ -231,7 +231,7 @@
 		<table border="1px">
 			<tr>
 				<td>用户名</td>  
-				<td><input type="text" name="username" value="123"/></td>
+				<td><input type="text" name="username" value="123" maxlength=""/></td>
 			</tr>
 			<tr>
 				<td>密码</td>
@@ -258,7 +258,120 @@
 			<input type="checkbox" name="interest" value="firehair" checked/>烫头
 			<br />
 			
-			<select name="grade">
+			<select name="grade" multiple="multiple" size="2">
+				<option value="gz">高中</option>
+				<option value="dz">大专</option>
+				<option value="bk" selected>本科</option>
+				<option value="ss">硕士</option>
+			</select>
+			
+			<textarea  rows="10" cols="60" name="introduce"></textarea>
+			<input type="submit" value="注册" />
+		</form>
+	</body>
+	<!--
+（1）action属性等同于超链接的href属性，填写请求的url
+（2）input标签属于输入域标签，input标签的type属性是text，表示文本框，是password，表示密码框
+（3）input标签的type是submit表示提交按钮，该按钮可以提交表单，所谓表单的提交是发送请求url，并携带数据给服务器。
+（4）所有按钮的value属性都是用来设置按钮上显示的文本内容 
+		maxlength属性限制输入长度
+（5）发送请求并提交数据时，数据格式遵循HTTP协议，所有浏览器都会采用这种格式：url?name=value&name=value&name=value...，其中name是input标签的name属性，value是input标签的value属性
+（6）文本框和密码框的value不需要开发人员指定，用户填写的数据就是value。 指定则自动显示在文本框中
+（7）submit按钮放到form标签外面无法提交表单
+（8）普通按钮不具备提交表单的能力。
+（9）radio单选按钮  name一样则单选 checked属性表示默认选中
+（10）checkbox 复选框
+（11）<select name="grade" multiple="multiple" size="2">
+				<option value="gz">高中</option>
+				<option value="dz">大专</option>
+				<option value="bk" selected>本科</option>
+				<option value="ss">硕士</option>
+			</select>
+			下拉列表
+			multiple 多选属性 
+			size显示的条数
+（12）textarea文本域 没有value值 文本框中的内容即value
+（13）form表单method属性：
+提交方式有两种
+get:提交后信息会显示在地址栏处
+post:提交后会隐藏信息
+
+ -->
+
+</html>
+
+```
+
+
+
+
+
+###### file控件及hidden控件
+
+
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单</title>
+	</head>
+	<!-- 
+	1.用户填写表单，提交数据给服务器，
+	所以表单是专门用来收集用户数据的。 
+	2.表单标签 <form>
+	3.一个页面可以有多个表单
+	4.表单提交给服务器 form中的action属性用来指定地址
+	
+	-->
+	<body>
+		<form action="https://www.baidu.com/">
+			<input type="submit" value="百度" />
+		</form>
+		
+		
+		<form action="http://localhost:8080/jd/login">
+			用户名<input type="text"/><br />
+			密码<input type="password" /><br />
+			<input type="submit"value="登录" />
+		
+		</form>
+		<br />
+		
+		<form action="http://localhost:8080/jd/login">
+		<table border="1px">
+			<tr>
+				<td>用户名</td>  
+				<td><input type="text" name="username" value="123"/></td>
+			</tr>
+			<tr>
+				<td>密码</td>
+				<td><input type="password" name="pwd" /></td>
+			</tr>
+			<tr align="center">
+				<td colspan="2">
+								<input type="hidden" name="userid" value="111" />
+					<input type="submit" value="登录" />
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="reset" value="清空" />
+				
+				</td>
+				
+			</tr>
+		</table>
+		</form>
+		
+		<br>
+		<form action="http://localhost:8080/jd/login" method="get">
+			<input type="radio" name="gender" value="1" />男
+			<input type="radio" name="gender" value="0"  checked/>女
+			<input type="checkbox" name="interest" value="smoke"/>抽烟
+			<input type="checkbox" name="interest" value="drink"/>喝酒
+			<input type="checkbox" name="interest" value="firehair" checked/>烫头
+			<br />
+			
+			<select name="grade" multiple="multiple" size="2">
 				<option value="gz">高中</option>
 				<option value="dz">大专</option>
 				<option value="bk" selected>本科</option>
@@ -280,13 +393,15 @@
 （8）普通按钮不具备提交表单的能力。
 （9）radio单选按钮  name一样则单选 checked属性表示默认选中
 （10）checkbox 复选框
-（11）<select name="grade">
+（11）<select name="grade" multiple="multiple" size="2">
 				<option value="gz">高中</option>
 				<option value="dz">大专</option>
 				<option value="bk" selected>本科</option>
 				<option value="ss">硕士</option>
 			</select>
 			下拉列表
+			multiple 多选属性 
+			size显示的条数
 （12）textarea文本域 没有value值 文本框中的内容即value
 （13）form表单method属性：
 提交方式有两种
@@ -298,4 +413,18 @@ post:提交后会隐藏信息
 </html>
 
 ```
+
+###### 
+
+###### 属性readonly与disabled
+
+
+
+
+
+![image-20211223143928052](https://raw.githubusercontent.com/Eade-Lee/MyNote/master/img/202112231439258.png)
+
+![image-20211223143131119](https://raw.githubusercontent.com/Eade-Lee/MyNote/master/img/202112231431004.png)
+
+
 
