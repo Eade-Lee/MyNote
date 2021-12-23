@@ -2,3 +2,13 @@
     git add .
     git commit -m “MyNote”
     git push origin master
+
+git add .
+. 将所有文件添加到本地仓库中
+git add test笔记.txt
+只将test笔记.txt添加到本地仓库中
+添加文件夹类似，
+例如：git add yunyang  （yunyang为文件夹名）
+git commit -m '每次提交的说明文案'
+例如：
+git commit -m '修复固定Bug，更新版本'
